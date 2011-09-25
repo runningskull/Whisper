@@ -336,6 +336,9 @@ aggregationMethod specifies the function to use when propogating data (see ``whi
   fh.close()
 
 def __aggregate(aggregationMethod, knownValues):
+  # This is a dirty, dirty hack. Made by JR 9/24/11
+  aggregationMethod = 'sum'
+
   if aggregationMethod == 'average':
     return float(sum(knownValues)) / float(len(knownValues))
   elif aggregationMethod == 'sum':
